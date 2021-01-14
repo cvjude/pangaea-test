@@ -1,0 +1,66 @@
+@import './media';
+
+.products {
+  .fl_pr {
+    padding: 64px 2.5rem 2.5rem;
+  }
+
+  .cnts {
+    padding: 80px 0 64px;
+
+    @include for-size(smaller-desktop) {
+      flex-direction: column;
+      justify-content: flex-start;
+
+      > div {
+        width: 100%;
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1.25em;
+
+      @include for-size(tablet-portrait-up) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      margin-top: 0.75rem;
+    }
+
+    .fl_sec {
+      max-width: 400px;
+      @include for-size(smaller-desktop) {
+        max-width: unset;
+        margin-top: 30px;
+      }
+    }
+
+    select {
+      width: 100%;
+      outline: 0px;
+      position: relative;
+      appearance: none;
+      transition: all 0.2s ease 0s;
+      padding: 2px 2rem 1px 1.25rem;
+      line-height: normal;
+      color: currentcolor;
+      height: 50px;
+      font-size: 1rem;
+      background: rgb(255, 255, 255);
+      border: 1px solid rgb(205, 209, 206);
+      border-radius: 0px;
+    }
+  }
+
+  .products_sec {
+    background-color: color(theme);
+    min-height: 70vh;
+
+    .container {
+      flex-wrap: wrap;
+    }
+  }
+}

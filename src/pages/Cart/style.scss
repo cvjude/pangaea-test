@@ -1,0 +1,142 @@
+.cart {
+  position: fixed;
+  top: 0;
+  background-color: #f2f2ef;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  height: 100%;
+  overflow-x: auto;
+  max-width: 550px;
+  width: 100%;
+  z-index: 1500;
+  transition: transform 0.4s cubic-bezier(0.28, 0.47, 0.29, 0.86),
+    opacity 0.4s ease-in-out 0.1s;
+  opacity: 0;
+  //   left: 0;
+  right: 0;
+  transform: translateX(100%);
+
+  &[data-open='true'] {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav-item {
+    width: 33.333%;
+    padding-top: 20px;
+    margin-bottom: 10px;
+
+    .icon {
+      border-radius: 50%;
+      border: 1px solid rgb(198, 204, 199);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+
+    h5 {
+      color: #696969;
+      font-weight: 400;
+      font-family: FF Bau Medium;
+      letter-spacing: 1px;
+      font-style: normal;
+      font-size: 10px;
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 1.2;
+    }
+  }
+
+  .cur-sel {
+    margin: 10px 20px 0;
+
+    .select_el {
+      position: relative;
+      display: inline;
+
+      &::after {
+        content: '\25BC';
+        position: absolute;
+        right: 5px;
+        top: 40%;
+        transform: translateY(-50%);
+        z-index: 2000;
+        font-size: 14px;
+      }
+    }
+
+    select {
+      padding: 8px 13px 5px 10px;
+      max-width: 80px;
+      border: none;
+      height: auto;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+
+  .cart-section {
+    padding: 0 20px;
+    -webkit-box-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+
+    .items {
+      margin-top: 10px;
+    }
+  }
+
+  footer {
+    border-top: 1px solid #d0d0d0;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    padding: 0 20px 20px;
+
+    .t_price {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-top: 15px;
+      border: 0 solid #6e7b70;
+      border-top: none;
+    }
+
+    .crt_btn {
+      margin-bottom: 15px;
+
+      .btn {
+        font-size: 12px;
+        font-weight: 400;
+        font-style: normal;
+        padding: 16px 20px;
+        text-align: center;
+        text-decoration: none;
+
+        color: #2b2e2b;
+        letter-spacing: 0.96px;
+        border: 1px solid #2b2e2b;
+        background-color: #fff;
+      }
+
+      .checkout {
+        color: #fff;
+        letter-spacing: 2px;
+        background-color: #4b5548;
+        border: none;
+        margin-top: 15px;
+
+        font-size: 12px;
+        font-weight: 400;
+        font-style: normal;
+        padding: 16px 20px;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+}

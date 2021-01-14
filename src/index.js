@@ -1,12 +1,23 @@
 import React from 'react';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import ReactDOM from 'react-dom';
-import './index.css';
+import CartProvider from './cartContext';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const client = new ApolloClient({
+  uri: 'https://pangaea-interviews.now.sh/api/graphql',
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
