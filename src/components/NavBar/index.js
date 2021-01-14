@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import logo from 'assets/logo.png';
 import Hambuger from 'assets/Hambuger/index.js';
+import CartIcon from '../CartIcon';
 import './style.scss';
 
 const links = [
   { title: 'Shop', link: '/' },
   { title: 'Learn', link: '/learn' },
   { title: 'Account', link: '/account' },
-  { title: 'Portals', link: '/portals' },
 ];
 
-const NavBar = () => {
+const NavBar = ({ openCart }) => {
   const navRef = useRef();
   const currentScroll = useRef();
   const [checked, setChecked] = useState(false);
@@ -98,12 +98,14 @@ const NavBar = () => {
             </div>
           </div>
 
-          <div className="l_s">
+          <div className="l_s flex-row">
             {links.slice(2).map((link, i) => (
               <a key={`sublink_${i}`} href={link.link} className={'links'}>
                 {link.title}
               </a>
             ))}
+
+            <CartIcon openCart={openCart} />
           </div>
         </div>
       </nav>

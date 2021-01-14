@@ -42,31 +42,13 @@ function App() {
 
   return (
     <section className="products">
-      <NavBar />
+      <NavBar openCart={() => cartref.current.open()} />
       {error ? (
         <div className="w-full flex-row" style={{ height: '100vh' }}>
           <h2>An Error Occured Please refresh and Try again</h2>
         </div>
       ) : (
         <>
-          <div className="fl_pr w-full flex-row">
-            <div className="cnts container flex-row j-space  w-full">
-              <div>
-                <h1>All Products</h1>
-                <p>A 360° look at Lumin</p>
-              </div>
-
-              <div className="fl_sec w-full">
-                <select>
-                  <option value disabled>
-                    Filter By
-                  </option>
-                  <option value="all-products">Filter By</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
           <div className="products_sec  w-full">
             <div className="container flex">
               {products.map((product) => (
